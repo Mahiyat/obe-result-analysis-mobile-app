@@ -11,7 +11,7 @@ import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.example.obe_result_analysis_mobile_app_1.databinding.ActivityMainBinding
-
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
@@ -25,7 +25,7 @@ private lateinit var binding: ActivityMainBinding
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        binding.appBarMain.fab.setOnClickListener { view ->
+        binding.appBarMain. fab.setOnClickListener { view ->
             Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                     .setAction("Action", null)
                     .setAnchorView(R.id.fab).show()
