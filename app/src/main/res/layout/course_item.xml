@@ -1,0 +1,55 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="8dp"
+    android:gravity="center_vertical">
+
+    <!-- Course ID -->
+    <TextView
+        android:id="@+id/course_id"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="CSE-209"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+    <!-- Course Name -->
+    <TextView
+        android:id="@+id/course_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="Algorithm-I"
+        android:textSize="16sp"
+        android:paddingStart="8dp"/>
+
+    <!-- View Icon -->
+    <ImageView
+        android:id="@+id/view_course"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/visibility_24px"
+        android:contentDescription="View Course"/>
+
+    <!-- Edit Icon -->
+    <ImageView
+        android:id="@+id/edit_course"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/edit_24px"
+        android:contentDescription="Edit Course"
+        android:layout_marginStart="8dp"/>
+
+    <!-- Delete Icon -->
+    <ImageView
+        android:id="@+id/delete_course"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:src="@drawable/delete_24px"
+        android:contentDescription="Delete Course"
+        android:layout_marginStart="8dp"/>
+
+</LinearLayout>

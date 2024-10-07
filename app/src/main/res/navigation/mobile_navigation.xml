@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.GalleryFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseListFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_course_list" />
 
     <fragment
         android:id="@+id/nav_slideshow"
