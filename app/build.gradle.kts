@@ -39,7 +39,7 @@ android {
 }
 
 dependencies {
-
+    implementation("androidx.cardview:cardview:1.0.0") //Check for the latest version
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
