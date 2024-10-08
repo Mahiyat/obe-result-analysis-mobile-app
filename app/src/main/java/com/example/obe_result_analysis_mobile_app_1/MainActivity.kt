@@ -44,7 +44,16 @@ private lateinit var binding: ActivityMainBinding
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
-        return true
+        if (menu.javaClass.simpleName == "MenuBuilder") {
+            try {
+                val method = menu.javaClass.getDeclaredMethod("setOptionalIconsVisible", java.lang.Boolean.TYPE)
+                method.isAccessible = true
+                method.invoke(menu, true)
+            } catch (e: Exception) {
+                e.printStackTrace()
+            }
+        }
+        return super.onCreateOptionsMenu(menu)
     }
 
     override fun onSupportNavigateUp(): Boolean {
