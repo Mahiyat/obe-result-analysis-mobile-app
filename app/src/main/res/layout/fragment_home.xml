@@ -48,7 +48,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:elevation="4dp"
-                app:cardBackgroundColor="@color/material_dynamic_primary30"
+                app:cardBackgroundColor="@color/blue_500"
                 app:cardCornerRadius="50dp">
 
                 <LinearLayout
@@ -85,7 +85,7 @@
                 android:layout_margin="8dp"
                 android:layout_weight="1"
                 android:elevation="4dp"
-                app:cardBackgroundColor="@color/material_dynamic_primary30"
+                app:cardBackgroundColor="@color/blue_500"
                 app:cardCornerRadius="50dp">
 
                 <LinearLayout
