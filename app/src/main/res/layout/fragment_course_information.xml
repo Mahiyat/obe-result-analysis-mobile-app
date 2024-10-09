@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <!-- Course Information Header -->
+        <TextView
+            android:id="@+id/tv_course_info_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Details"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Course Details -->
+        <TextView
+            android:id="@+id/text_course_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course ID: CSE-209" />
+
+        <TextView
+            android:id="@+id/text_course_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Course Name: Algorithm-I" />
+
+        <TextView
+            android:id="@+id/tv_department"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Department: Computer Science and Engineering"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_exam_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Exam Title: 2nd Year 1st Semester 2023"
+            android:layout_marginBottom="16dp" />
+
+        <!-- Continuous Internal Evaluation Header -->
+        <TextView
+            android:id="@+id/tv_cie_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Continuous Internal Evaluation"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Add Exam Button -->
+        <Button
+            android:id="@+id/btn_add_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+ Add Exam"
+            android:layout_marginBottom="8dp" />
+
+        <!-- Exam List (RecyclerView) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view_exams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical" />
+
+        <!-- Action Buttons -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="16dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_view_marksheet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="View Marksheet" />
+
+            <Button
+                android:id="@+id/btn_submit_marks"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Marks"
+                android:layout_marginLeft="16dp" />
+        </LinearLayout>
+
+        <!-- Semester End Examination -->
+        <TextView
+            android:id="@+id/tv_semester_end_exam"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Semester End Examination"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:layout_marginTop="24dp" />
+
+        <TextView
+            android:id="@+id/tv_semester_end_exam_details"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="For details click here"
+            android:textColor="@android:color/holo_blue_dark" />
+
+        <Button
+            android:id="@+id/btn_submit_semester_end_marks"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Submit Marks"
+            android:layout_marginTop="8dp" />
+
+        <TextView
+            android:id="@+id/tv_warning"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N.B. Marks once submitted cannot be undone"
+            android:textColor="@android:color/holo_red_dark"
+            android:layout_marginTop="4dp" />
+    </LinearLayout>
+
+</ScrollView>

@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.obe_result_analysis_mobile_app_1.R
 
@@ -33,6 +35,11 @@ class CourseAdapter(private val courseList: List<Course>) :
         // Set actions for icons
         holder.viewIcon.setOnClickListener {
             // Handle view action
+            val bundle = bundleOf(
+                "courseId" to course.courseId,
+                "courseName" to course.courseName
+            )
+            it.findNavController().navigate(R.id.action_courseListFragment_to_courseInformationFragment, bundle)
         }
 
         holder.editIcon.setOnClickListener {
