@@ -15,11 +15,30 @@
         android:id="@+id/nav_gallery"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseListFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_course_list" />
+        tools:layout="@layout/fragment_course_list">
+        <action
+            android:id="@+id/action_courseListFragment_to_courseInformationFragment"
+            app:destination="@id/nav_course_information" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_slideshow"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.slideshow.ResultStatisticsFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/fragment_result_statistics" />
+
+    <fragment
+        android:id="@+id/nav_course_information"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseInformationFragment"
+        android:label="@string/menu_course_information"
+        tools:layout="@layout/fragment_course_information">
+        <action
+            android:id="@+id/action_courseInformationFragment_to_courseDetailsFragment"
+            app:destination="@id/courseDetailsFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/courseDetailsFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseDetailsFragment"
+        android:label="Course Details" />
 </navigation>
