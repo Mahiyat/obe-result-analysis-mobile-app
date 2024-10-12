@@ -10,4 +10,10 @@
     <color name="blue_200">#90caf9</color>
     <color name="blue_500">#2196f3</color>
     <color name="blue_700">#1976d2</color>
+    <color name="color1">#009688</color>
+    <color name="color2">#2196f3</color>
+    <color name="color3">#9c27b0</color>
+    <color name="color4">#673ab7</color>
+    <color name="color5">#3f51b5</color>
+    <color name="color6">#1a237e</color>
 </resources>
