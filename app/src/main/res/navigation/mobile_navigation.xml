@@ -35,10 +35,19 @@
         <action
             android:id="@+id/action_courseInformationFragment_to_courseDetailsFragment"
             app:destination="@id/courseDetailsFragment" />
+        <action
+            android:id="@+id/action_courseInformationFragment_to_individualCIEMarksheetFragment"
+            app:destination="@+id/individualCIEMarksheetFragment"/>
     </fragment>
 
     <fragment
         android:id="@+id/courseDetailsFragment"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseDetailsFragment"
-        android:label="Course Details" />
+        android:label="Course Details">
+    </fragment>
+
+    <fragment
+        android:id="@+id/individualCIEMarksheetFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CIEIndividualMarksheetFragment"
+        android:label="CIE Individual Marksheet"/>
 </navigation>
