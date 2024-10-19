@@ -38,6 +38,9 @@
         <action
             android:id="@+id/action_courseInformationFragment_to_individualCIEMarksheetFragment"
             app:destination="@+id/individualCIEMarksheetFragment"/>
+        <action
+            android:id="@+id/action_courseInformationFragment_to_cieMarksheetFragment"
+            app:destination="@+id/cieMarksheetFragment"/>
     </fragment>
 
     <fragment
@@ -50,4 +53,9 @@
         android:id="@+id/individualCIEMarksheetFragment"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CIEIndividualMarksheetFragment"
         android:label="CIE Individual Marksheet"/>
+
+    <fragment
+        android:id="@+id/cieMarksheetFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CIEMarksheetFragment"
+        android:label="CIE Marksheet"/>
 </navigation>
