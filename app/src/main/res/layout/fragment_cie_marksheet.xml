@@ -1,0 +1,94 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TableRow>
+            <!-- Roll Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_cell_border"
+                android:text="Roll"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Tutorial Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1.5"
+                android:background="@drawable/table_cell_border"
+                android:text="Tutorial (out of 20)"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Assignment Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                android:background="@drawable/table_cell_border"
+                android:text="Assignment (out of 10)"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Curricular/Co-curricular Activities Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                android:background="@drawable/table_cell_border"
+                android:text="Curricular/Co-curricular Activities (out of 5)"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Quiz Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="1"
+                android:background="@drawable/table_cell_border"
+                android:text="Quiz (out of 5)"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+
+            <!-- Total Header -->
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="80dp"
+                android:layout_weight="2"
+                android:background="@drawable/table_cell_border"
+                android:text="Total (out of 40)"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textSize="16sp"
+                android:layout_gravity="center_vertical" />
+        </TableRow>
+    </TableLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cieMarksRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical" />
+
+</LinearLayout>

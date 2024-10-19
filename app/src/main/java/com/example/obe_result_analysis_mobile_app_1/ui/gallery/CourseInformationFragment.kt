@@ -6,8 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.TextView
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.obe_result_analysis_mobile_app_1.R
@@ -54,10 +56,13 @@ class CourseInformationFragment : Fragment() {
         // Handle button clicks
         btnViewMarksheet.setOnClickListener {
             // Handle View Marksheet button click
+            it.findNavController().navigate(R.id.action_courseInformationFragment_to_cieMarksheetFragment)
+
         }
 
         btnSubmitMarks.setOnClickListener {
             // Handle Submit Marks button click
+            Toast.makeText(requireContext(), "Marks successfully submitted!", Toast.LENGTH_SHORT).show()
         }
 
         return view
