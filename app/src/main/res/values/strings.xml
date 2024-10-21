@@ -13,4 +13,5 @@
     <string name="menu_gallery">View Courses</string>
     <string name="menu_slideshow">Result Statistics</string>
     <string name="menu_course_information">Course Information</string>
+    <string name="error_message">Error: %1$s</string>
 </resources>
