@@ -32,13 +32,10 @@ class CIEAdapter(private val exams: List<String>) : RecyclerView.Adapter<CIEAdap
 
         // Set onClick listeners for each button if necessary
         holder.viewDetailsButton.setOnClickListener {
-            // Handle view details
-            // Handle view action
             val bundle = bundleOf(
-                "courseId" to exam,
-                "courseName" to exam
+                "examName" to exam
             )
-            it.findNavController().navigate(R.id.action_courseInformationFragment_to_courseMarksFragment, bundle)
+            it.findNavController().navigate(R.id.action_courseInformationFragment_to_individualCIEMarksheetFragment, bundle)
         }
         holder.editButton.setOnClickListener {
             // Handle edit exam
