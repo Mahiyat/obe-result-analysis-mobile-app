@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@android:color/white">
+
+    <!-- Marks Statistics Section -->
+    <TextView
+        android:id="@+id/marksStatisticsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="MARKS STATISTICS"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:padding="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="3"
+        android:layout_marginBottom="24dp">
+
+        <!-- A+ Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_light"
+            android:layout_marginRight="16dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/gradeAPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A+"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/aPlusPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="45%"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- A Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_light"
+            android:layout_marginRight="16dp"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/gradeA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/aPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="32%"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <!-- A- Section -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="@android:color/holo_blue_light"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/gradeAMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="A-"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/aMinusPercentage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="20%"
+                android:textSize="16sp"
+                android:textColor="@android:color/white"
+                android:gravity="center" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Exam Marks Table Label -->
+    <TextView
+        android:id="@+id/examMarksTableLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="EXAM MARKS TABLE"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Table Layout for Exam Marks -->
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:stretchColumns="*"
+        android:background="@android:color/transparent"
+        android:gravity="center"
+        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp">
+
+        <TableRow android:background="@android:color/holo_blue_light">
+            <TextView
+                android:text="Name"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="Roll"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="Marks"
+                android:textStyle="bold"
+                android:textColor="@android:color/white"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </TableRow>
+
+        <!-- Example Rows for Marks (You can dynamically add these) -->
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:text="Mahiyat"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="361"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="95"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </TableRow>
+
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:text="Jubaer"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="402"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="90"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow android:background="@android:color/white">
+            <TextView
+                android:text="Abrar"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="398"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+            <TextView
+                android:text="90"
+                android:textColor="@android:color/black"
+                android:padding="8dp"
+                android:gravity="center"/>
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

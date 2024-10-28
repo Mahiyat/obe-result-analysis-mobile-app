@@ -5,6 +5,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.obe_result_analysis_mobile_app_1.R
 
@@ -31,6 +33,12 @@ class CIEAdapter(private val exams: List<String>) : RecyclerView.Adapter<CIEAdap
         // Set onClick listeners for each button if necessary
         holder.viewDetailsButton.setOnClickListener {
             // Handle view details
+            // Handle view action
+            val bundle = bundleOf(
+                "courseId" to exam,
+                "courseName" to exam
+            )
+            it.findNavController().navigate(R.id.action_courseInformationFragment_to_courseMarksFragment, bundle)
         }
         holder.editButton.setOnClickListener {
             // Handle edit exam

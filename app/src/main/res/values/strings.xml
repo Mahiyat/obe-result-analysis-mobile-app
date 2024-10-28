@@ -13,4 +13,27 @@
     <string name="menu_gallery">View Courses</string>
     <string name="menu_slideshow">Result Statistics</string>
     <string name="menu_course_information">Course Information</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="subject_array">
+        <item>Math</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <!-- Add more subjects as needed -->
+    </string-array>
+
+    <string-array name="exam_name_array">
+        <item>Midterm</item>
+        <item>Final</item>
+        <item>Quiz</item>
+        <!-- Add more examination names as needed -->
+    </string-array>
+
+    <string-array name="course_array">
+        <item>Course 1</item>
+        <item>Course 2</item>
+        <item>Course 3</item>
+        <!-- Add more courses as needed -->
+    </string-array>
 </resources>
