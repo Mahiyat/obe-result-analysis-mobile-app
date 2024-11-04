@@ -19,6 +19,7 @@ import com.github.mikephil.charting.data.*
 import com.github.mikephil.charting.formatter.ValueFormatter
 import com.github.mikephil.charting.listener.OnChartValueSelectedListener
 import com.github.mikephil.charting.highlight.Highlight
+import io.noties.markwon.Markwon
 import okhttp3.Call
 import okhttp3.Callback
 import okhttp3.MediaType.Companion.toMediaType
@@ -185,6 +186,10 @@ class ResultStatisticsFragment : Fragment() {
                                     Log.e("ResultStatisticsFragment", "Error parsing stream response: ${e.message}")
                                 }
                             }
+                            activity?.runOnUiThread {
+                                val markwonComment = context?.let { Markwon.create(it) }
+                                markwonComment?.setMarkdown(outputTextView, stringBuilder.toString())
+                            }
                         } catch (e: Exception) {
                             Log.e("ResultStatisticsFragment", "Error reading stream: ${e.message}")
                             activity?.runOnUiThread {
@@ -291,6 +296,7 @@ class ResultStatisticsFragment : Fragment() {
         seeSpinner.visibility = View.GONE
         barChart.visibility = View.GONE
         pieChart.visibility = View.GONE
+        stackedBarChart.visibility = View.GONE
         btnShowComments.visibility = View.GONE
         toggleChart.visibility = View.GONE
         commentTextView.visibility = View.GONE
@@ -344,6 +350,7 @@ class ResultStatisticsFragment : Fragment() {
         incourseTypeSpinner.visibility = View.GONE
         barChart.visibility = View.GONE
         pieChart.visibility = View.GONE
+        stackedBarChart.visibility = View.GONE
         btnShowComments.visibility = View.GONE
         toggleChart.visibility = View.GONE
 
@@ -458,6 +465,9 @@ class ResultStatisticsFragment : Fragment() {
         courseSpinner.visibility = View.GONE
         examTitleSpinner.visibility = View.GONE
         isSingleCourseMode = false
+        btnShowComments.visibility = View.GONE
+        commentTextView.text=""
+        commentTextView.visibility=View.GONE
         stackedBarChart.clear()
 
         val entries = listOf(
