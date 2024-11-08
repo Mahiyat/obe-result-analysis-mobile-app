@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">obe-result-analysis-mobile-app-1</string>
+    <string name="app_name">OBE Insight</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">John Doe</string>
@@ -14,4 +14,5 @@
     <string name="menu_slideshow">Result Statistics</string>
     <string name="menu_course_information">Course Information</string>
     <string name="error_message">Error: %1$s</string>
+    <string name="default_web_client_id">800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com</string>
 </resources>
