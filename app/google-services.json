@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "800147311552",
+    "project_id": "obe-result-analysis",
+    "storage_bucket": "obe-result-analysis.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:800147311552:android:a974a190145c42ccb3d625",
+        "android_client_info": {
+          "package_name": "com.example.obe_result_analysis_mobile_app_1"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.obe_result_analysis_mobile_app_1",
+            "certificate_hash": "f42b68cb0d5b69eb142b4b1ebaf3cbd97a571d36"
+          }
+        },
+        {
+          "client_id": "800147311552-spule43uhs52dnjatjqr0r2a8ta484vf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD06YFIll_ALqDT0wagMjh9GA2AjgJJu3A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "800147311552-spule43uhs52dnjatjqr0r2a8ta484vf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
