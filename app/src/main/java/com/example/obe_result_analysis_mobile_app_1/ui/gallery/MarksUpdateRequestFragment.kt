@@ -25,13 +25,23 @@ class MarksUpdateRequestFragment : Fragment() {
         val sendButton = view.findViewById<Button>(R.id.sendButton2)
 
         sendButton.setOnClickListener {
-            val subject = subjectEditText.text.toString()
-            val examName = examNameEditText.text.toString()
-            val course = courseEditText.text.toString()
-            val message = messageEditText.text.toString()
+            val subject = subjectEditText.text.toString().trim()
+            val examName = examNameEditText.text.toString().trim()
+            val course = courseEditText.text.toString().trim()
+            val message = messageEditText.text.toString().trim()
 
-            // Handle the send action (e.g., submit to server, show Toast, etc.)
-            Toast.makeText(requireContext(), "Request Sent", Toast.LENGTH_SHORT).show()
+            if (subject.isEmpty() && examName.isEmpty() && course.isEmpty() && message.isEmpty()) {
+                Toast.makeText(requireContext(), "Please fill the fields!", Toast.LENGTH_SHORT).show()
+            } else {
+                // Handle the send action (e.g., submit to server, show Toast, etc.)
+                Toast.makeText(requireContext(), "Request Sent", Toast.LENGTH_SHORT).show()
+
+                // Clear the input fields after sending the request
+                subjectEditText.text.clear()
+                examNameEditText.text.clear()
+                courseEditText.text.clear()
+                messageEditText.text.clear()
+            }
         }
 
         return view

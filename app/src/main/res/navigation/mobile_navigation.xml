@@ -63,7 +63,16 @@
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CIEMarksheetFragment"
         android:label="CIE Marksheet"/>
     <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ProfileFragment"
+        android:label="Profile" />
+    <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.obe_result_analysis_mobile_app_1.SettingsFragment"
         android:label="SettingsFragment" />
+    <fragment
+        android:id="@+id/feedbackFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.MarksUpdateRequestFragment"
+        android:label="Feedback"
+        tools:layout="@layout/fragment_marks_update_request" />
 </navigation>

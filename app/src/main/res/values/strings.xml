@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">obe-result-analysis-mobile-app-1</string>
+    <string name="app_name">OBE Insight</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">John Doe</string>
@@ -14,6 +14,8 @@
     <string name="menu_slideshow">Result Statistics</string>
     <string name="menu_course_information">Course Information</string>
     <string name="error_message">Error: %1$s</string>
+
+    <string name="default_web_client_id">800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -52,5 +54,46 @@
     <string name="attachment_summary_on">Automatically download attachments for incoming emails
     </string>
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
-    <string name="default_web_client_id">800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com</string>
+
+
+
+    <string name="general_header">General</string>
+    <string name="dark_mode_title">Dark Mode</string>
+    <string name="dark_mode_on">Dark mode is enabled</string>
+    <string name="dark_mode_off">Dark mode is disabled</string>
+    <string name="language_title">Language</string>
+    <string-array name="language_entries">
+        <item>English</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Deutsch</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>en</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>de</item>
+    </string-array>
+
+    <!-- Notification settings -->
+    <string name="notifications_header">Notifications</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="notifications_on">Notifications are enabled</string>
+    <string name="notifications_off">Notifications are disabled</string>
+    <string name="vibrate_title">Vibrate</string>
+    <string name="notification_sound_title">Notification Sound</string>
+
+    <!-- Account settings -->
+    <string name="account_header">Account</string>
+    <string name="change_password_title">Change Password</string>
+    <string name="change_password_summary">Update your account password</string>
+    <string name="logout_title">Logout</string>
+    <string name="logout_summary">Sign out of your account</string>
+
+    <!-- About settings -->
+    <string name="about_header">About</string>
+    <string name="app_version_title">App Version</string>
+    <string name="app_version_summary">1.0.0</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="terms_of_service_title">Terms of Service</string>
 </resources>

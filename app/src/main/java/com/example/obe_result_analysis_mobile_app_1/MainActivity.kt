@@ -1,6 +1,9 @@
 package com.example.obe_result_analysis_mobile_app_1
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.widget.TextView
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -32,10 +35,8 @@ private lateinit var binding: ActivityMainBinding
         // Set the FloatingActionButton listener
         binding.appBarMain.fab.setOnClickListener { view ->
             // Open the new fragment when the button is clicked
-            val transaction = supportFragmentManager.beginTransaction()
-            transaction.replace(R.id.fragment_container, MarksUpdateRequestFragment())
-            transaction.addToBackStack(null) // Allows the user to navigate back
-            transaction.commit()
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.feedbackFragment)
+
         }
 
         // Initialize drawer and navigation view
@@ -82,10 +83,14 @@ private lateinit var binding: ActivityMainBinding
         return when (item.itemId) {
             R.id.action_view_profile -> {
                 // Handle "View Profile" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.nav_profile)
                 true
             }
             R.id.action_settings -> {
                 // Handle "Settings" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_logout -> {
