@@ -178,18 +178,20 @@ class ResultStatisticsFragment : Fragment() {
                                 try{
                                     val jsonObject = JSONObject(jsonResponse)
                                     val generatedText = jsonObject.getString("response")
+                                    val markwonComment = context?.let { Markwon.create(it) }
                                     stringBuilder.append(generatedText)
                                     activity?.runOnUiThread {
-                                        outputTextView.text = stringBuilder.toString()
+//                                        outputTextView.text = stringBuilder.toString()
+                                        markwonComment?.setMarkdown(outputTextView, stringBuilder.toString())
                                     }
                                 } catch (e: Exception){
                                     Log.e("ResultStatisticsFragment", "Error parsing stream response: ${e.message}")
                                 }
                             }
-                            activity?.runOnUiThread {
-                                val markwonComment = context?.let { Markwon.create(it) }
-                                markwonComment?.setMarkdown(outputTextView, stringBuilder.toString())
-                            }
+//                            activity?.runOnUiThread {
+//                                val markwonComment = context?.let { Markwon.create(it) }
+//                                markwonComment?.setMarkdown(outputTextView, stringBuilder.toString())
+//                            }
                         } catch (e: Exception) {
                             Log.e("ResultStatisticsFragment", "Error reading stream: ${e.message}")
                             activity?.runOnUiThread {
