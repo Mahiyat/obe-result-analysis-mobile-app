@@ -79,10 +79,14 @@ private lateinit var binding: ActivityMainBinding
         return when (item.itemId) {
             R.id.action_view_profile -> {
                 // Handle "View Profile" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.nav_profile)
                 true
             }
             R.id.action_settings -> {
                 // Handle "Settings" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_logout -> {
