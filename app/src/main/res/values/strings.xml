@@ -83,12 +83,12 @@
     <string name="vibrate_title">Vibrate</string>
     <string name="notification_sound_title">Notification Sound</string>
 
-    <!-- Account settings -->
-    <string name="account_header">Account</string>
-    <string name="change_password_title">Change Password</string>
-    <string name="change_password_summary">Update your account password</string>
-    <string name="logout_title">Logout</string>
-    <string name="logout_summary">Sign out of your account</string>
+    <!-- Contact Us settings -->
+    <string name="contact_us_header">Contact Us</string>
+    <string name="phone_title">Phone</string>
+    <string name="phone_summary">Contact us using Phone</string>
+    <string name="email_title">Email</string>
+    <string name="email_summary">Contact us using Email</string>
 
     <!-- About settings -->
     <string name="about_header">About</string>

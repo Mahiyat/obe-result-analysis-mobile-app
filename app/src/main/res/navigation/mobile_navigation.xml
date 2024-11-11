@@ -68,8 +68,8 @@
         android:label="Profile" />
     <fragment
         android:id="@+id/settingsFragment"
-        android:name="com.example.obe_result_analysis_mobile_app_1.SettingsFragment"
-        android:label="SettingsFragment" />
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.settings.SettingsFragment"
+        android:label="Settings" />
     <fragment
         android:id="@+id/feedbackFragment"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.MarksUpdateRequestFragment"

@@ -1,19 +1,17 @@
 <PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <PreferenceCategory app:title="@string/general_header">
-        <SwitchPreferenceCompat
-            app:key="dark_mode"
-            app:title="@string/dark_mode_title"
-            app:summaryOff="@string/dark_mode_off"
-            app:summaryOn="@string/dark_mode_on" />
+    <PreferenceCategory app:title="@string/contact_us_header">
+        <Preference
+            app:key="phone"
+            app:title="@string/phone_title"
+            app:summary="@string/phone_summary"
+            app:persistent="false"/>
+        <Preference
+            app:key="email"
+            app:title="@string/email_title"
+            app:summary="@string/email_summary"
+            app:persistent="false"/>
 
-        <ListPreference
-            app:key="language"
-            app:title="@string/language_title"
-            app:entries="@array/language_entries"
-            app:entryValues="@array/language_values"
-            app:defaultValue="en"
-            app:useSimpleSummaryProvider="true" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/notifications_header">
@@ -28,18 +26,6 @@
             app:title="@string/vibrate_title"
             app:dependency="notifications_enabled" />
 
-    </PreferenceCategory>
-
-    <PreferenceCategory app:title="@string/account_header">
-        <Preference
-            app:key="change_password"
-            app:title="@string/change_password_title"
-            app:summary="@string/change_password_summary" />
-
-        <Preference
-            app:key="logout"
-            app:title="@string/logout_title"
-            app:summary="@string/logout_summary" />
     </PreferenceCategory>
 
     <PreferenceCategory app:title="@string/about_header">
