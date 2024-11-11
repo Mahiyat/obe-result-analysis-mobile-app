@@ -1,0 +1,79 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/white"
+    tools:context=".ui.gallery.MarksUpdateRequestFragment">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Marks Update Request"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:layout_gravity="center" />
+
+    <!-- Description -->
+    <TextView
+        android:id="@+id/description2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Explain your problem below and submit request"
+        android:textSize="16sp"
+        android:layout_marginTop="8dp"
+        android:layout_gravity="center"/>
+
+    <!-- Subject EditText -->
+    <EditText
+        android:id="@+id/subjectEditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Subject"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Examination Name EditText -->
+    <EditText
+        android:id="@+id/examNameEditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Examination Name"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Course EditText -->
+    <EditText
+        android:id="@+id/courseEditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter Course Name"
+        android:layout_marginTop="16dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Message Box -->
+    <EditText
+        android:id="@+id/messageEditText2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Message"
+        android:layout_marginTop="16dp"
+        android:minHeight="150dp"
+        android:gravity="top"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Send Button -->
+    <Button
+        android:id="@+id/sendButton2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SUBMIT REQUEST"
+        android:layout_gravity="center"
+        android:layout_marginTop="24dp"
+        android:textColor="@android:color/white" />
+
+</LinearLayout>
