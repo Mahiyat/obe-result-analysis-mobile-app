@@ -32,14 +32,9 @@ private lateinit var binding: ActivityMainBinding
 
         setSupportActionBar(binding.appBarMain.toolbar)
 
-        // Set the FloatingActionButton listener
-        binding.appBarMain.fab.setOnClickListener { view ->
-            // Open the new fragment when the button is clicked
-            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.feedbackFragment)
-
+        binding.appBarMain. fab.setOnClickListener { view ->
+            findNavController(R.id.nav_host_fragment_content_main).navigate(R.id.marksUpdateFragment)
         }
-
-        // Initialize drawer and navigation view
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
         val navController = findNavController(R.id.nav_host_fragment_content_main)
@@ -80,17 +75,14 @@ private lateinit var binding: ActivityMainBinding
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        val navController = findNavController(R.id.nav_host_fragment_content_main)
         return when (item.itemId) {
             R.id.action_view_profile -> {
                 // Handle "View Profile" action
-                findNavController(R.id.nav_host_fragment_content_main)
-                    .navigate(R.id.nav_profile)
                 true
             }
             R.id.action_settings -> {
                 // Handle "Settings" action
-                findNavController(R.id.nav_host_fragment_content_main)
-                    .navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_logout -> {

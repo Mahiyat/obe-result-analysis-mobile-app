@@ -16,6 +16,11 @@
     </fragment>
 
     <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ProfileFragment"
+        android:label="Profile" />
+
+    <fragment
         android:id="@+id/nav_gallery"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CourseListFragment"
         android:label="@string/menu_gallery"
@@ -62,6 +67,12 @@
         android:id="@+id/cieMarksheetFragment"
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.CIEMarksheetFragment"
         android:label="CIE Marksheet"/>
+
+    <fragment
+        android:id="@+id/marksUpdateFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.MarksUpdateRequestFragment"
+        android:label="Message"
+        tools:layout="@layout/fragment_marks_update_request" />
     <fragment
         android:id="@+id/nav_profile"
         android:name="com.example.obe_result_analysis_mobile_app_1.ProfileFragment"
