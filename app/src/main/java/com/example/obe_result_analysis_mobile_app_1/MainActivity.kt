@@ -78,11 +78,15 @@ private lateinit var binding: ActivityMainBinding
         val navController = findNavController(R.id.nav_host_fragment_content_main)
         return when (item.itemId) {
             R.id.action_view_profile -> {
-                navController.navigate(R.id.profileFragment)
+                // Handle "View Profile" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.nav_profile)
                 true
             }
             R.id.action_settings -> {
                 // Handle "Settings" action
+                findNavController(R.id.nav_host_fragment_content_main)
+                    .navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_logout -> {

@@ -14,5 +14,86 @@
     <string name="menu_slideshow">Result Statistics</string>
     <string name="menu_course_information">Course Information</string>
     <string name="error_message">Error: %1$s</string>
+
     <string name="default_web_client_id">800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="subject_array">
+        <item>Math</item>
+        <item>Physics</item>
+        <item>Chemistry</item>
+        <!-- Add more subjects as needed -->
+    </string-array>
+
+    <string-array name="exam_name_array">
+        <item>Midterm</item>
+        <item>Final</item>
+        <item>Quiz</item>
+        <!-- Add more examination names as needed -->
+    </string-array>
+
+    <string-array name="course_array">
+        <item>Course 1</item>
+        <item>Course 2</item>
+        <item>Course 3</item>
+        <!-- Add more courses as needed -->
+    </string-array>
+    <!-- Preference Titles -->
+    <string name="messages_header">Messages</string>
+    <string name="sync_header">Sync</string>
+
+    <!-- Messages Preferences -->
+    <string name="signature_title">Your signature</string>
+    <string name="reply_title">Default reply action</string>
+
+    <!-- Sync Preferences -->
+    <string name="sync_title">Sync email periodically</string>
+    <string name="attachment_title">Download incoming attachments</string>
+    <string name="attachment_summary_on">Automatically download attachments for incoming emails
+    </string>
+    <string name="attachment_summary_off">Only download attachments when manually requested</string>
+
+
+
+    <string name="general_header">General</string>
+    <string name="dark_mode_title">Dark Mode</string>
+    <string name="dark_mode_on">Dark mode is enabled</string>
+    <string name="dark_mode_off">Dark mode is disabled</string>
+    <string name="language_title">Language</string>
+    <string-array name="language_entries">
+        <item>English</item>
+        <item>Español</item>
+        <item>Français</item>
+        <item>Deutsch</item>
+    </string-array>
+    <string-array name="language_values">
+        <item>en</item>
+        <item>es</item>
+        <item>fr</item>
+        <item>de</item>
+    </string-array>
+
+    <!-- Notification settings -->
+    <string name="notifications_header">Notifications</string>
+    <string name="notifications_title">Notifications</string>
+    <string name="notifications_on">Notifications are enabled</string>
+    <string name="notifications_off">Notifications are disabled</string>
+    <string name="vibrate_title">Vibrate</string>
+    <string name="notification_sound_title">Notification Sound</string>
+
+    <!-- Contact Us settings -->
+    <string name="contact_us_header">Contact Us</string>
+    <string name="phone_title">Phone</string>
+    <string name="phone_summary">Contact us using Phone</string>
+    <string name="email_title">Email</string>
+    <string name="email_summary">Contact us using Email</string>
+
+    <!-- About settings -->
+    <string name="about_header">About</string>
+    <string name="app_version_title">App Version</string>
+    <string name="app_version_summary">1.0.0</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="terms_of_service_title">Terms of Service</string>
 </resources>
