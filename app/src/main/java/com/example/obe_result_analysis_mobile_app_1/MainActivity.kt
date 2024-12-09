@@ -82,7 +82,7 @@ private lateinit var binding: ActivityMainBinding
                 true
             }
             R.id.action_settings -> {
-                // Handle "Settings" action
+                navController.navigate(R.id.settingsFragment)
                 true
             }
             R.id.action_logout -> {
