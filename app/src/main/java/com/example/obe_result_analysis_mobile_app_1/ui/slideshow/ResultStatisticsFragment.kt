@@ -1,12 +1,21 @@
 package com.example.obe_result_analysis_mobile_app_1.ui.slideshow
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.graphics.Bitmap
+import android.graphics.Canvas
+import android.graphics.Color
+import android.graphics.Paint
+import android.graphics.pdf.PdfDocument
 import android.os.Bundle
+import android.os.Environment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.core.content.ContextCompat
+import androidx.core.content.FileProvider
 import androidx.fragment.app.Fragment
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.obe_result_analysis_mobile_app_1.R
@@ -31,6 +40,8 @@ import org.json.JSONObject
 import java.io.IOException
 import java.util.concurrent.TimeUnit
 import okhttp3.*
+import java.io.File
+import java.io.FileOutputStream
 
 class ResultStatisticsFragment : Fragment() {
 
@@ -46,6 +57,7 @@ class ResultStatisticsFragment : Fragment() {
     private lateinit var toggleChart: Switch
     private lateinit var commentTextView: TextView
     private lateinit var progressBar: ProgressBar
+    private lateinit var btnExportPDF: Button
 
     private var courseSelected = false
     private var examTitleSelected = false
@@ -98,6 +110,7 @@ class ResultStatisticsFragment : Fragment() {
         toggleChart = view.findViewById(R.id.toggle_chart)
         commentTextView = view.findViewById(R.id.commentTextView)
         progressBar = view.findViewById(R.id.progressBar)
+        btnExportPDF = view.findViewById(R.id.btn_export_pdf)
 
 
         setupEvaluationSpinner()
@@ -107,6 +120,10 @@ class ResultStatisticsFragment : Fragment() {
             // Define the action when the button is clicked
             commentTextView.text=""
             showComments()
+        }
+
+        btnExportPDF.setOnClickListener{
+            exportAllVisibleComponentsToPDF()
         }
 
         return view
@@ -242,6 +259,7 @@ class ResultStatisticsFragment : Fragment() {
 
 
         btnShowComments.visibility = View.GONE
+        btnExportPDF.visibility = View.GONE
         toggleChart.visibility = View.GONE
 
 
@@ -266,6 +284,7 @@ class ResultStatisticsFragment : Fragment() {
 
     private fun setupEvaluationSpinner() {
         commentTextView.text=""
+        btnExportPDF.visibility = View.GONE
         val evaluationTypes = listOf("Select Evaluation Type", "Continuous Internal Evaluation", "Semester End Examination")
         val adapter = ArrayAdapter(requireContext(), android.R.layout.simple_spinner_item, evaluationTypes)
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
@@ -285,6 +304,7 @@ class ResultStatisticsFragment : Fragment() {
 
     private fun showCIEOptions() {
         commentTextView.text=""
+        btnExportPDF.visibility = View.GONE
         courseSpinner.setSelection(0)
         examTitleSpinner.setSelection(0)
         incourseTypeSpinner.setSelection(0)
@@ -337,6 +357,7 @@ class ResultStatisticsFragment : Fragment() {
 
     private fun showSEEOptions() {
         commentTextView.text=""
+        btnExportPDF.visibility = View.GONE
         incourseTypeSelected=false
         val seeOptions = listOf("Select SEE Type", "Single Course", "All Courses")
 
@@ -413,6 +434,7 @@ class ResultStatisticsFragment : Fragment() {
     }
 
     private fun renderBarChartForSingleCourse() {
+        btnExportPDF.visibility = View.VISIBLE
         val entries = listOf(
             BarEntry(0f, 85f), // CLO1
             BarEntry(1f, 90f), // CLO2
@@ -464,6 +486,7 @@ class ResultStatisticsFragment : Fragment() {
     }
 
     private fun renderStackedBarChartForAllCourses() {
+        btnExportPDF.visibility = View.VISIBLE
         courseSpinner.visibility = View.GONE
         examTitleSpinner.visibility = View.GONE
         isSingleCourseMode = false
@@ -514,6 +537,7 @@ class ResultStatisticsFragment : Fragment() {
     }
 
     private fun renderPieChart(incourseType: String) {
+        btnExportPDF.visibility = View.VISIBLE
         val entries = listOf(
             PieEntry(23f, "80%-100%"),
             PieEntry(12f, "70%-79%"),
@@ -559,6 +583,7 @@ class ResultStatisticsFragment : Fragment() {
     }
 
     private fun renderStackedBarChart(incourseType: String) {
+        btnExportPDF.visibility = View.VISIBLE
         val entries = listOf(
             BarEntry(0f, floatArrayOf(23f, 12f, 9f, 7f, 2f, 1f)),
         )
@@ -597,4 +622,122 @@ class ResultStatisticsFragment : Fragment() {
             barChart.visibility = View.VISIBLE
         }
     }
+
+    private fun exportAllVisibleComponentsToPDF() {
+        val pdfDocument = PdfDocument()
+        val downloadsDir = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)
+        val outputFile: File
+
+        if (incourseTypeSelected) {
+            outputFile = File(downloadsDir, "Report$incourseName.pdf")
+        } else {
+            outputFile = File(downloadsDir, "Report$course.pdf")
+        }
+
+        try {
+            // Get screen height dynamically
+            val screenHeight = resources.displayMetrics.heightPixels
+            val width = resources.displayMetrics.widthPixels // Screen width in pixels
+
+            val visibleComponents = listOf(
+                barChart,
+                pieChart,
+                stackedBarChart,
+            )
+
+            var currentY = 20f // Starting Y-coordinate
+            val paint = Paint().apply {
+                color = Color.BLACK
+                textSize = 16f
+                textAlign = Paint.Align.LEFT
+            }
+
+            // Function to create a new page and start drawing
+            fun createNewPage(): PdfDocument.Page {
+                val pageInfo = PdfDocument.PageInfo.Builder(width, screenHeight, 1).create()
+                return pdfDocument.startPage(pageInfo) // Start a new page
+            }
+
+            var totalHeight = 0
+
+            // First page creation
+            var currentPage = createNewPage()
+
+            visibleComponents.forEach { chart ->
+                if (chart.visibility == View.VISIBLE) {
+                    val chartBitmap = Bitmap.createBitmap(chart.width, chart.height, Bitmap.Config.ARGB_8888)
+                    val chartCanvas = Canvas(chartBitmap)
+                    chart.draw(chartCanvas)
+
+                    // Check if the current content fits on the page
+                    if (currentY + chart.height + 100 > screenHeight) {
+                        // Content overflows, create a new page
+                        pdfDocument.finishPage(currentPage) // Finish the current page
+                        currentPage = createNewPage() // Start a new page
+                        currentY = 20f
+                    }
+
+                    // Draw chart on the current page
+                    currentPage.canvas.drawBitmap(chartBitmap, 0f, currentY, null)
+                    currentY += chart.height + 20 // Update Y position for the next component
+                }
+            }
+
+            // Draw comment if visible
+            if (commentTextView.visibility == View.VISIBLE) {
+                val commentText = "Generated Comment:"
+                val commentLines = commentTextView.text.chunked(50) // Wrap the comment text to fit in the page
+
+                // Check if comment will fit, else create a new page
+
+                currentPage.canvas.drawText(commentText, 20f, currentY, paint)
+                currentY += 20 // Move down after the "Generated Comment" text
+
+                commentLines.forEach { line ->
+                    currentPage.canvas.drawText(line, 20f, currentY, paint)
+                    if (currentY + line.length > screenHeight) {
+                        pdfDocument.finishPage(currentPage) // Finish current page
+                        currentPage = createNewPage() // Start a new page
+                        currentY = 20f
+                    }
+                    currentY+=20
+                }
+
+                currentY += 30 // Add some spacing after the comment
+            }
+
+            // Finish the last page
+            pdfDocument.finishPage(currentPage)
+
+            // Write the PDF to file
+            FileOutputStream(outputFile).use { pdfDocument.writeTo(it) }
+
+            val uri = FileProvider.getUriForFile(
+                requireContext(),
+                "${requireContext().packageName}.fileprovider",
+                outputFile
+            )
+
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                setDataAndType(uri, "application/pdf")
+                flags = Intent.FLAG_ACTIVITY_NO_HISTORY or Intent.FLAG_GRANT_READ_URI_PERMISSION
+            }
+
+            try {
+                startActivity(intent)
+            } catch (e: ActivityNotFoundException) {
+                Toast.makeText(context, "No PDF viewer installed!", Toast.LENGTH_SHORT).show()
+            }
+
+        } catch (e: IOException) {
+            Log.e("PDFExport", "Error exporting PDF: ${e.message}")
+        } finally {
+            pdfDocument.close()
+        }
+    }
+
+
+
+
+
 }
