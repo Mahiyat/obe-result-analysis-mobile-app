@@ -102,21 +102,26 @@
             android:text="Semester End Examination"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:layout_marginTop="24dp" />
+            android:layout_marginTop="24dp"
+            android:layout_marginBottom="12dp"/>
 
         <TextView
             android:id="@+id/tv_semester_end_exam_details"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="For details click here"
-            android:textColor="@android:color/holo_blue_dark" />
+            android:textSize="16sp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"/>
 
         <Button
             android:id="@+id/btn_submit_semester_end_marks"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit Marks"
-            android:layout_marginTop="8dp" />
+            android:layout_marginTop="10dp" />
 
         <TextView
             android:id="@+id/tv_warning"

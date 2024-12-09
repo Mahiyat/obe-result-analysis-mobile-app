@@ -3,7 +3,9 @@ import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.view.MotionEvent
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.navigation.NavigationView
 import androidx.navigation.findNavController
@@ -13,6 +15,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.MotionEventCompat
 import com.example.obe_result_analysis_mobile_app_1.databinding.ActivityMainBinding
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
@@ -52,6 +55,18 @@ private lateinit var binding: ActivityMainBinding
             R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow), drawerLayout)
         setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
+    }
+
+    override fun onTouchEvent(event: MotionEvent): Boolean {
+        return when (MotionEventCompat.getActionMasked(event)) {
+
+            // Display a Toast whenever a movement is captured on the screen
+            MotionEvent.ACTION_MOVE -> {
+//                Toast.makeText(applicationContext, "Action was MOVE", Toast.LENGTH_SHORT).show()
+                true
+            }
+            else -> super.onTouchEvent(event)
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
