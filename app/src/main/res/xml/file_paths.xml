@@ -1,0 +1,6 @@
+<paths>
+    <!-- External storage path for shared files -->
+    <external-path name="external_files" path="." />
+    <!-- Internal app-specific directory -->
+    <files-path name="internal_files" path="." />
+</paths>

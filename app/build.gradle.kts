@@ -67,5 +67,8 @@ dependencies {
     implementation("com.github.bumptech.glide:glide:4.12.0")
     annotationProcessor("com.github.bumptech.glide:compiler:4.12.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
+    implementation("com.itextpdf:itext7-core:7.1.18")
+//    implementation("androidx.pdf:pdf-renderer:1.0.0")
+
 
 }
