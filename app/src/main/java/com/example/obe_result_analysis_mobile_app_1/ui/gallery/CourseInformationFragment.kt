@@ -22,6 +22,7 @@ class CourseInformationFragment : Fragment() {
     private lateinit var examsAdapter: CIEAdapter
     private lateinit var btnViewMarksheet: Button
     private lateinit var btnSubmitMarks: Button
+    private lateinit var seeMarksDetails: TextView
 
     private val examsList = listOf("Tutorial-1", "Assignment", "Quiz", "Tutorial-2", "Curricular")
 
@@ -43,6 +44,7 @@ class CourseInformationFragment : Fragment() {
         examRecyclerView = view.findViewById(R.id.recycler_view_exams)
         btnViewMarksheet = view.findViewById(R.id.btn_view_marksheet)
         btnSubmitMarks = view.findViewById(R.id.btn_submit_marks)
+        seeMarksDetails = view.findViewById(R.id.tv_semester_end_exam_details)
 
         // Set course information in the views
         courseIdTextView.text = "Course ID: $courseId"
@@ -63,6 +65,11 @@ class CourseInformationFragment : Fragment() {
         btnSubmitMarks.setOnClickListener {
             // Handle Submit Marks button click
             Toast.makeText(requireContext(), "Marks successfully submitted!", Toast.LENGTH_SHORT).show()
+        }
+
+        seeMarksDetails.setOnClickListener {
+
+            it.findNavController().navigate(R.id.action_courseInformationFragment_to_seeMarksheetFragment)
         }
 
         return view

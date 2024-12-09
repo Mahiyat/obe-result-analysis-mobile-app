@@ -32,7 +32,8 @@
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:src="@drawable/visibility_24px"
-        android:contentDescription="View Course"/>
+        android:contentDescription="View Course"
+        android:background="?attr/selectableItemBackgroundBorderless"/>
 
     <!-- Edit Icon -->
     <ImageView
