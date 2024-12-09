@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <item name="preferenceCategoryTitleTextColor">@color/blue_500</item>
     </style>
     <style name="Theme.Oberesultanalysismobileapp1.NoActionBar">
         <item name="windowActionBar">false</item>

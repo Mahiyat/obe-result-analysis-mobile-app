@@ -69,4 +69,26 @@
         android:name="com.example.obe_result_analysis_mobile_app_1.ui.gallery.MarksUpdateRequestFragment"
         android:label="Message"
         tools:layout="@layout/fragment_marks_update_request" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.settings.SettingsFragment"
+        android:label="Settings">
+        <action
+            android:id="@+id/action_settings_to_privacy_policy"
+            app:destination="@+id/privacyPolicyFragment"/>
+        <action
+            android:id="@+id/action_settings_to_terms_of_service"
+            app:destination="@+id/termsOfServiceFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/privacyPolicyFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.settings.PrivacyPolicyFragment"
+        android:label="Privacy Policy"/>
+
+    <fragment
+        android:id="@+id/termsOfServiceFragment"
+        android:name="com.example.obe_result_analysis_mobile_app_1.ui.settings.TermsOfServiceFragment"
+        android:label="Terms of Service"/>
 </navigation>

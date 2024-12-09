@@ -15,4 +15,23 @@
     <string name="menu_course_information">Course Information</string>
     <string name="error_message">Error: %1$s</string>
     <string name="default_web_client_id">800147311552-9j75ts5fk5un4u31nhrupcneinko88hl.apps.googleusercontent.com</string>
+
+    <string name="contact_us_header">Contact Us</string>
+
+    <string name="phone_title">Phone</string>
+    <string name="phone_summary">Call us for support</string>
+    <string name="email_title">Email</string>
+    <string name="email_summary">Email us for inquiries</string>
+
+    <string name="notifications_header">Notifications</string>
+    <string name="notifications_title">Enable Notifications</string>
+    <string name="notifications_on">Notifications are enabled</string>
+    <string name="notifications_off">Notifications are disabled</string>
+    <string name="vibrate_title">Vibrate on Notification</string>
+
+    <string name="about_header">About</string>
+    <string name="app_version_title">App Version</string>
+    <string name="app_version_summary">Version 1.0</string>
+    <string name="privacy_policy_title">Privacy Policy</string>
+    <string name="terms_of_service_title">Terms of Service</string>
 </resources>
