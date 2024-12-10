@@ -1,5 +1,6 @@
 package com.example.obe_result_analysis_mobile_app_1.ui.settings
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
@@ -13,6 +14,8 @@ class PrivacyPolicyFragment : Fragment(R.layout.fragment_privacy_policy) {
         super.onViewCreated(view, savedInstanceState)
 
         val privacyPolicyWebView: WebView = view.findViewById(R.id.privacyPolicyWebView)
+
+        privacyPolicyWebView.setBackgroundColor(Color.parseColor("#e3f2fd"))
 
         val privacyPolicyHtml = """
             <html>

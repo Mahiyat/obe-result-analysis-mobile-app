@@ -1,5 +1,6 @@
 package com.example.obe_result_analysis_mobile_app_1.ui.settings
 
+import android.graphics.Color
 import android.os.Bundle
 import android.view.View
 import android.webkit.WebView
@@ -12,6 +13,8 @@ class TermsOfServiceFragment : Fragment(R.layout.fragment_terms_of_service) {
         super.onViewCreated(view, savedInstanceState)
 
         val termsOfServiceWebView: WebView = view.findViewById(R.id.termsOfServiceWebView)
+
+        termsOfServiceWebView.setBackgroundColor(Color.parseColor("#e3f2fd"))
 
         val termsOfServiceHtml = """
             <html>
