@@ -58,7 +58,7 @@ OBE Insight is a mobile application designed to enhance the accessibility and us
 - Set up the Django REST API server with the required SQLite database. Web app project link: https://github.com/Mahiyat/obe-project-result-analysis.git
 - Ensure the server is running and accessible.
 
-5. ** Setup Ollama **:
+5. **Setup Ollama**:
 - Setup ollama as per the instructions [here](https://github.com/ollama/ollama)
 
 6. **Run the App**:
