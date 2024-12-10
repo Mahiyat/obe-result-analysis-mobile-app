@@ -69,12 +69,12 @@ OBE Insight is a mobile application designed to enhance the accessibility and us
 
 ## What's Next
 
-- [ ] Feature implementation for Student, Exam Committee, and Exam Office
-- [ ] Implementation of Role Based Access Control (RBAC)
-- [ ] Integration of REST APIs for marks entry and result statistics
-- [ ] Enhancement of messaging system
-- [ ] Integrating AI-chat system for result analysis and improvement suggestions
-- [ ] Enhancement of the contents of exported PDF
+* Feature implementation for Student, Exam Committee, and Exam Office
+* Implementation of Role Based Access Control (RBAC)
+* Integration of REST APIs for marks entry and result statistics
+* Enhancement of messaging system
+* Integrating AI-chat system for result analysis and improvement suggestions
+* Enhancement of the contents of exported PDF
 
 
 
