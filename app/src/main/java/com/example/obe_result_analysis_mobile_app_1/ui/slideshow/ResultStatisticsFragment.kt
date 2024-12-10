@@ -648,7 +648,7 @@ class ResultStatisticsFragment : Fragment() {
             var currentY = 20f // Starting Y-coordinate
             val paint = Paint().apply {
                 color = Color.BLACK
-                textSize = 16f
+                textSize = 20f
                 textAlign = Paint.Align.LEFT
             }
 
@@ -686,24 +686,43 @@ class ResultStatisticsFragment : Fragment() {
             // Draw comment if visible
             if (commentTextView.visibility == View.VISIBLE) {
                 val commentText = "Generated Comment:"
-                val commentLines = commentTextView.text.chunked(50) // Wrap the comment text to fit in the page
+                val pageWidth = width.toFloat()
 
-                // Check if comment will fit, else create a new page
-
+                // Draw "Generated Comment" header
                 currentPage.canvas.drawText(commentText, 20f, currentY, paint)
-                currentY += 20 // Move down after the "Generated Comment" text
+                currentY += 20f // Move down after the header text
 
-                commentLines.forEach { line ->
-                    currentPage.canvas.drawText(line, 20f, currentY, paint)
-                    if (currentY + line.length > screenHeight) {
-                        pdfDocument.finishPage(currentPage) // Finish current page
-                        currentPage = createNewPage() // Start a new page
-                        currentY = 20f
+                // Split comment text into words
+                val words = commentTextView.text.split(" ")
+
+                // Wrap text to fit within the page width
+                val wrappedLines = mutableListOf<String>()
+                var currentLine = StringBuilder()
+
+                for (word in words) {
+                    val testLine = if (currentLine.isEmpty()) word else "$currentLine $word"
+                    if (paint.measureText(testLine) < pageWidth - 40f) {
+                        currentLine.append(if (currentLine.isEmpty()) word else " $word")
+                    } else {
+                        wrappedLines.add(currentLine.toString())
+                        currentLine = StringBuilder(word) // Start a new line with the current word
                     }
-                    currentY+=20
+                }
+                // Add the last line if it's not empty
+                if (currentLine.isNotEmpty()) {
+                    wrappedLines.add(currentLine.toString())
                 }
 
-                currentY += 30 // Add some spacing after the comment
+                // Write wrapped lines to the page
+                for (line in wrappedLines) {
+                    if (currentY + 20 > screenHeight) {
+                        pdfDocument.finishPage(currentPage) // Finish current page
+                        currentPage = createNewPage() // Start a new page
+                        currentY = 20f // Reset to top of the new page
+                    }
+                    currentPage.canvas.drawText(line, 20f, currentY, paint)
+                    currentY += 20f // Move down for the next line
+                }
             }
 
             // Finish the last page
